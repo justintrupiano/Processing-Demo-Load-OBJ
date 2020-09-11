@@ -5,7 +5,6 @@ PeasyCam cam;
 // float[][] testFaces  = new float[0][0];
 
 
-String dataDir    = "../../data/";
 float[][] testVerts;
 float[][] testFaces;
 
@@ -16,11 +15,10 @@ void setup(){
   // fill(127);
   noCursor();
   noFill();
-  //THIS ASSUMES FILES ARE IN: dataDir
-  // MATH WORKS BEST WHEN FACES ARE TRIANGLES
 
-  testVerts = getObjArray("supernova.obj", "v ", " ", "/");
-  testFaces = getObjArray("supernova.obj", "f ", " ", "/");
+  // MATH WORKS BEST WHEN FACES ARE TRIANGLES
+  testVerts = getObjArray("skull.obj", "v ", " ", "/");
+  testFaces = getObjArray("skull.obj", "f ", " ", "/");
 
 
   fullScreen(P3D);
@@ -84,7 +82,7 @@ void drawObject(float[][] objVerts, float[][] objFaces, int skip, int scale, boo
 
 float[][] getObjArray(String objFileName, String startSubString, String splitString, String separator){
 
-  String[]    objFile       = loadStrings(dataDir + objFileName);
+  String[]    objFile       = loadStrings(objFileName);
   String[]    stringArray   = new String[0];
 
   for (int i =0; i < objFile.length; i++){
